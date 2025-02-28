@@ -34,7 +34,7 @@ body::before {
 
 /* Centered Login Container */
 .login-container {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(230, 239, 230, 0.932);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgb(85, 188, 85);
@@ -74,11 +74,13 @@ form {
 
 /* Labels */
 label {
-    color: #1d8c1e;
+    color: #111805;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+    
+   
 }
 
 /* Input Fields */
@@ -96,7 +98,7 @@ input {
 }
 
 input::placeholder {
-    color: rgba(44, 95, 45, 0.7);
+    color: rgba(1, 5, 1, 0.7);
 }
 
 input:focus {
@@ -143,53 +145,7 @@ button:hover {
 /* Mobile Responsive */
 @media (max-width: 400px) {
     .login-container {
-        width: 90%; /* Use more screen space while keeping a margin */
-        max-width: 320px; /* Prevents excessive width on slightly larger devices */
-        padding: 20px; /* Balanced padding */
-        height: auto; /* Ensures flexibility */
-        min-height: 320px; /* Provides enough space for form elements */
-        border-radius: 10px; /* Soft edges */
-        box-shadow: 0px 4px 12px rgba(85, 188, 85, 0.5); /* Subtle shadow */
-        background: rgba(255, 255, 255, 0.7); /* Slightly more opacity for better contrast */
-    }
-
-    /* Adjust Header for Small Screens */
-    .header h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    /* Adjust Description for Readability */
-    .description {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    /* Reduce Form Input Sizes for Better Fit */
-    input {
-        width: 95%; /* More space for typing */
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    /* Button Styling for Smaller Screens */
-    button {
-        width: 90%; /* Full-width for easier tapping */
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    /* Improve Button Hover Effect */
-    button:hover {
-        transform: scale(1.05); /* Slight effect to maintain balance */
-        box-shadow: 0px 4px 12px rgba(39, 197, 42, 0.5);
-    }
-}
-/* Mobile Responsive */
-@media (max-width: 400px) {
-    .login-container {
-        width: auto; /* Adjusts width dynamically */
-        padding: 20px; /* Consistent padding */
-        height: auto; /* Adapts to content size */
+        width: 80%;
+        padding: 15px;
     }
 }
