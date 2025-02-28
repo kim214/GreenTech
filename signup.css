@@ -131,7 +131,8 @@ button:hover {
 /* Mobile Responsive */
 @media (max-width: 400px) {
     .signup-container {
-        width: 90%;
+        width: auto;
         padding: 20px;
+        height: auto;
     }
 }
