@@ -143,8 +143,45 @@ button:hover {
 /* Mobile Responsive */
 @media (max-width: 400px) {
     .login-container {
-        width: auto;
-        padding: 15px;
-        height: auto;
+        width: 90%; /* Use more screen space while keeping a margin */
+        max-width: 320px; /* Prevents excessive width on slightly larger devices */
+        padding: 20px; /* Balanced padding */
+        height: auto; /* Ensures flexibility */
+        min-height: 320px; /* Provides enough space for form elements */
+        border-radius: 10px; /* Soft edges */
+        box-shadow: 0px 4px 12px rgba(85, 188, 85, 0.5); /* Subtle shadow */
+        background: rgba(255, 255, 255, 0.7); /* Slightly more opacity for better contrast */
+    }
+
+    /* Adjust Header for Small Screens */
+    .header h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust Description for Readability */
+    .description {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* Reduce Form Input Sizes for Better Fit */
+    input {
+        width: 95%; /* More space for typing */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Button Styling for Smaller Screens */
+    button {
+        width: 90%; /* Full-width for easier tapping */
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* Improve Button Hover Effect */
+    button:hover {
+        transform: scale(1.05); /* Slight effect to maintain balance */
+        box-shadow: 0px 4px 12px rgba(39, 197, 42, 0.5);
     }
 }
