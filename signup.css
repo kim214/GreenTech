@@ -130,9 +130,9 @@ button:hover {
 
 /* Mobile Responsive */
 @media (max-width: 400px) {
-    .login-container {
-        width: auto; /* Adjusts width dynamically */
-        padding: 20px; /* Consistent padding */
-        height: auto; /* Adapts to content size */
+    .signup-container {
+        width: auto;
+        padding: 20px;
+        height: auto;
     }
 }

@@ -185,3 +185,11 @@ button:hover {
         box-shadow: 0px 4px 12px rgba(39, 197, 42, 0.5);
     }
 }
+/* Mobile Responsive */
+@media (max-width: 400px) {
+    .login-container {
+        width: auto; /* Adjusts width dynamically */
+        padding: 20px; /* Consistent padding */
+        height: auto; /* Adapts to content size */
+    }
+}
