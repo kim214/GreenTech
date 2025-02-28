@@ -1,0 +1,149 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+/* General Page Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    background: url('agriculture.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Animated Background Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%);
+    animation: rotateBackground 10s linear infinite;
+}
+
+/* Background Animation */
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Centered Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.55);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(85, 188, 85);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Header Styling */
+.header h1 {
+    color: #2c5f2d;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-family: "Eras Bold ITC";
+}
+
+/* Description Text */
+.description {
+    color: #2c5f2d;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: "Bookman Old Style";
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
+label {
+    color: #1d8c1e;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #090909;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(44, 95, 45, 0.7);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgb(39, 197, 42);
+}
+
+/* Button Styling */
+button {
+    width: 100px;
+    padding: 10px;
+    background: linear-gradient(45deg, #71e171, #090909);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #27c52a, #090909);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 400px) {
+    .login-container {
+        width: 80%;
+        padding: 15px;
+    }
+}
