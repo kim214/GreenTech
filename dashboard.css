@@ -109,6 +109,30 @@ p {
     color: white;
 }
 
+/* Automatic Irrigation Display */
+#auto-irrigation-status {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+/* Green glowing effect when auto-irrigation is ON */
+.auto-on {
+    color: #4caf50 !important;
+    text-shadow: 0 0 8px #4caf50;
+}
+
+/* Red glowing effect when auto-irrigation is OFF */
+.auto-off {
+    color: #e53935 !important;
+    text-shadow: 0 0 8px #e53935;
+}
+
+
 /* Buttons */
 button {
     width: 100%;
