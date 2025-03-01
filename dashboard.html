@@ -9,15 +9,87 @@
 
 <body>
     <div class="dashboard-container">
-        <h1>Welcome to Your Dashboard!</h1>
-        <p>Congratulations, you have successfully logged in.</p>
-        <button onclick="logout()">Logout</button>
+        <h1>GreenTech Systems</h1>
+        <p>Smart Farming for a Sustainable Future</p>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('monitoring')">Live Monitoring</button>
+            <button class="tab-button" onclick="openTab('irrigation')">Irrigation</button>
+        </div>
+
+        <!-- Live Monitoring Section -->
+        <div id="monitoring" class="tab-content active">
+            <div class="sensor-data">
+                <p>🌡 Temperature: <span id="temperature">--</span> °C</p>
+                <p>💧 Soil Moisture: <span id="moisture">--</span>%</p>
+            </div>
+        </div>
+
+        <!-- Irrigation Section -->
+        <div id="irrigation" class="tab-content">
+            <div class="status-container">
+                <p id="irrigation-status">Irrigation Status: <span>OFF</span></p>
+            </div>
+            <button id="start-irrigation" onclick="startIrrigation()">Start Irrigation</button>
+            <button id="stop-irrigation" onclick="stopIrrigation()" style="display: none;">Stop Irrigation</button>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout" onclick="logout()">Logout</button>
     </div>
 
     <script>
+        function openTab(tabName) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected tab and set active button
+            document.getElementById(tabName).style.display = 'block';
+            document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+        }
+
+        function fetchSensorData() {
+            fetch("http://localhost:5000/sensor-data") // Change to your backend URL
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("temperature").innerText = data.temperature;
+                document.getElementById("moisture").innerText = data.moisture;
+            })
+            .catch(error => console.error("Error fetching data:", error));
+        }
+
+        setInterval(fetchSensorData, 5000); // Refresh every 5s
+
+        function startIrrigation() {
+            document.getElementById("irrigation-status").innerHTML = "Irrigation Status: <span style='color:green;'>ON</span>";
+            document.getElementById("start-irrigation").style.display = "none";
+            document.getElementById("stop-irrigation").style.display = "inline-block";
+            alert("Irrigation started successfully!");
+        }
+
+        function stopIrrigation() {
+            document.getElementById("irrigation-status").innerHTML = "Irrigation Status: <span style='color:red;'>OFF</span>";
+            document.getElementById("stop-irrigation").style.display = "none";
+            document.getElementById("start-irrigation").style.display = "inline-block";
+            alert("Irrigation stopped successfully!");
+        }
+
         function logout() {
             window.location.href = "index.html"; // Redirects back to login page
         }
+
+        // Set initial tab visibility
+        document.addEventListener("DOMContentLoaded", () => {
+            openTab('monitoring'); // Default tab
+        });
     </script>
 </body>
 </html>
