@@ -15,12 +15,23 @@ function fetchSensorData() {
     .then(data => {
         document.getElementById("temperature").innerText = data.temperature;
         document.getElementById("moisture").innerText = data.moisture;
+        document.getElementById("soil-ph").innerText = data.soil_ph; // Soil pH
+        document.getElementById("humidity").innerText = data.humidity; // Humidity
         
         // Automatic Irrigation Logic
         if (data.moisture < 30) {
             startIrrigation(true); // Auto-start
         } else if (data.moisture > 60) {
             stopIrrigation(true); // Auto-stop
+        }
+
+        // Automatic Ventilation Logic (Only if manual mode is OFF)
+        if (!manualVentilation) {
+            if (data.temperature > 30 || data.humidity > 80) {
+                openVentilation(true); // Auto-open fan
+            } else {
+                closeVentilation(true); // Auto-close fan
+            }
         }
     })
     .catch(error => console.error("Error fetching data:", error));
@@ -40,6 +51,39 @@ function stopIrrigation(auto = false) {
     document.getElementById("stop-irrigation").style.display = "none";
     document.getElementById("start-irrigation").style.display = "inline-block";
     if (!auto) alert("Irrigation stopped successfully!");
+}
+
+// Ventilation System Logic
+let manualVentilation = false; // Track manual control state
+
+function openVentilation(auto = false) {
+    document.getElementById("ventilation-status").innerHTML = "Ventilation Status: <span style='color:green;'>ON</span>";
+    document.getElementById("open-ventilation").style.display = "none";
+    document.getElementById("close-ventilation").style.display = "inline-block";
+
+    if (auto) {
+        document.getElementById("auto-ventilation-status").innerHTML = "Auto-Ventilation: <span class='auto-on'>ON</span>";
+        manualVentilation = false; // Disable manual mode when auto takes over
+    } else {
+        document.getElementById("auto-ventilation-status").innerHTML = "Auto-Ventilation: <span class='auto-off'>OFF</span>";
+        manualVentilation = true; // Enable manual mode
+        alert("Fan opened successfully!");
+    }
+}
+
+function closeVentilation(auto = false) {
+    document.getElementById("ventilation-status").innerHTML = "Ventilation Status: <span style='color:red;'>OFF</span>";
+    document.getElementById("close-ventilation").style.display = "none";
+    document.getElementById("open-ventilation").style.display = "inline-block";
+
+    if (auto) {
+        document.getElementById("auto-ventilation-status").innerHTML = "Auto-Ventilation: <span class='auto-on'>ON</span>";
+        manualVentilation = false; // Disable manual mode when auto takes over
+    } else {
+        document.getElementById("auto-ventilation-status").innerHTML = "Auto-Ventilation: <span class='auto-off'>OFF</span>";
+        manualVentilation = true; // Enable manual mode
+        alert("Fan closed successfully!");
+    }
 }
 
 function logout() {

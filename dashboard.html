@@ -16,6 +16,7 @@
         <div class="tabs">
             <button class="tab-button active" onclick="openTab('monitoring')">Live Monitoring</button>
             <button class="tab-button" onclick="openTab('irrigation')">Irrigation</button>
+            <button class="tab-button" onclick="openTab('ventilation')">Ventilation</button>
         </div>
 
         <!-- Live Monitoring Section -->
@@ -23,6 +24,8 @@
             <div class="sensor-data">
                 <p>🌡 Temperature: <span id="temperature">--</span> °C</p>
                 <p>💧 Soil Moisture: <span id="moisture">--</span>%</p>
+                <p>🌿 Soil pH: <span id="soil-ph">--</span></p>
+                <p>💦 Humidity: <span id="humidity">--</span>%</p>
             </div>
         </div>
 
@@ -36,6 +39,18 @@
 
             <!-- Automatic Irrigation Status -->
             <p id="auto-irrigation-status">Auto-Irrigation: <span style="color:red;">OFF</span></p>
+        </div>
+
+        <!-- Ventilation Section -->
+        <div id="ventilation" class="tab-content">
+            <div class="status-container">
+                <p id="ventilation-status">Ventilation Status: <span>OFF</span></p>
+            </div>
+            <button id="open-ventilation" onclick="openVentilation()">Open Fan</button>
+            <button id="close-ventilation" onclick="closeVentilation()" style="display: none;">Close Fan</button>
+
+            <!-- Automatic Ventilation Status -->
+            <p id="auto-ventilation-status">Auto-Ventilation: <span style="color:red;">OFF</span></p>
         </div>
 
         <!-- Logout Button -->
