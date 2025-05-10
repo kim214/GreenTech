@@ -1,0 +1,269 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('greenhouse.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Glassmorphism Dashboard */
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Headings & Paragraphs */
+h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p {
+    color: #f1f1f1;
+    font-size: 1rem;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Sensor Data Display */
+.sensor-data {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Highlighting sensor values */
+#temperature, #moisture, #soil-ph, #humidity {
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.5s ease-in-out;
+}
+
+#temperature { color: #ff9800; }
+#moisture { color: #4caf50; }
+#soil-ph { color: #03a9f4; }
+#humidity { color: #9c27b0; }
+
+/* Irrigation Status */
+.status-container {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Automatic Irrigation Display */
+#auto-irrigation-status {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+/* Green glowing effect when auto-irrigation is ON */
+.auto-on {
+    color: #4caf50 !important;
+    text-shadow: 0 0 8px #4caf50;
+}
+
+/* Red glowing effect when auto-irrigation is OFF */
+.auto-off {
+    color: #e53935 !important;
+    text-shadow: 0 0 8px #e53935;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #2e7d32);
+    transform: scale(1.05);
+}
+
+/* Disabled Button Style */
+button:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Stop Irrigation Button */
+#stop-irrigation {
+    background: linear-gradient(135deg, #e53935, #c62828);
+}
+
+#stop-irrigation:hover {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+}
+
+/* Logout Button */
+.logout {
+    background: linear-gradient(135deg, #757575, #616161);
+}
+
+.logout:hover {
+    background: linear-gradient(135deg, #616161, #424242);
+}
+
+/* Ventilation Status */
+#ventilation-status {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Automatic Ventilation Display */
+#auto-ventilation-status {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+/* Buttons for Ventilation System */
+#open-ventilation {
+    background: linear-gradient(135deg, #03a9f4, #0288d1);
+}
+
+#open-ventilation:hover {
+    background: linear-gradient(135deg, #0288d1, #0277bd);
+    transform: scale(1.05);
+}
+
+#close-ventilation {
+    background: linear-gradient(135deg, #e53935, #c62828);
+}
+
+#close-ventilation:hover {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    transform: scale(1.05);
+}
+
+/* When Auto Ventilation is ON, disable manual buttons */
+.auto-mode #open-ventilation,
+.auto-mode #close-ventilation {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .tab-button {
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    .sensor-data, .status-container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+    button { font-size: 0.9rem; padding: 10px; }
+}

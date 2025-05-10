@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GreenTech Systems</title>
+    <link rel="stylesheet" href="dashboard.css">
+    
+<body>
+    <div class="dashboard-container">
+        <h1>GreenTech Systems</h1>
+        <p>Smart Farming for a Sustainable Future</p>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('monitoring')">Live Monitoring</button>
+            <button class="tab-button" onclick="openTab('irrigation')">Irrigation</button>
+            <button class="tab-button" onclick="openTab('ventilation')">Ventilation</button>
+        </div>
+
+        <!-- Live Monitoring Section -->
+        <div id="monitoring" class="tab-content active">
+            <div class="sensor-data">
+                <p>🌡 Temperature: <span id="temperature">--</span> °C</p>
+                <p>💧 Soil Moisture: <span id="moisture">--</span>%</p>
+                <p>🌿 Soil pH: <span id="soil-ph">--</span></p>
+                <p>💦 Humidity: <span id="humidity">--</span>%</p>
+            </div>
+        </div>
+
+        <!-- Irrigation Section -->
+        <div id="irrigation" class="tab-content">
+            <div class="status-container">
+                <p id="irrigation-status">Irrigation Status: <span>OFF</span></p>
+            </div>
+            <button id="start-irrigation" onclick="startIrrigation()">Start Irrigation</button>
+            <button id="stop-irrigation" onclick="stopIrrigation()" style="display: none;">Stop Irrigation</button>
+
+            <!-- Automatic Irrigation Status -->
+            <p id="auto-irrigation-status">Auto-Irrigation: <span style="color:red;">OFF</span></p>
+        </div>
+
+        <!-- Ventilation Section -->
+        <div id="ventilation" class="tab-content">
+            <div class="status-container">
+                <p id="ventilation-status">Ventilation Status: <span>OFF</span></p>
+            </div>
+            <button id="open-ventilation" onclick="openVentilation()">Open Fan</button>
+            <button id="close-ventilation" onclick="closeVentilation()" style="display: none;">Close Fan</button>
+
+            <!-- Automatic Ventilation Status -->
+            <p id="auto-ventilation-status">Auto-Ventilation: <span style="color:red;">OFF</span></p>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="dashboardscript.js"></script>
+</body>
+</html>

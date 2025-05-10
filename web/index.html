@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>GreenTech Systems Limited</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="header">
+            <h1>Login to GreenTech Systems</h1>
+            <p class="description">Smart Farming for a Sustainable Future</p>
+        </div>
+        <form onsubmit="return loginUser(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+             <!-- Link to show the signup form -->
+            <p class="toggle-form">Don't have an account? <a href="signup.html" onclick="toggleForm()">Create an Account</a></p>
+        </form>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="indexscript.js"></script>
+</body>
+</html>
